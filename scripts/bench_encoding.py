@@ -1,3 +1,25 @@
+"""
+===============================================
+ENCODING BENCHMARK UTILITY
+===============================================
+bench_encoding.py
+
+Specialized benchmarking tool for detailed encoding parameter testing.
+Tests various preset/CRF combinations to help optimize your settings.
+
+USAGE (Direct Python):
+  python bench_encoding.py <input>
+
+USAGE (Wrapper Scripts - Recommended):
+  Windows PowerShell: .\bench_encoding.ps1 input.mp4
+  Linux/macOS:       ./bench_encoding.sh input.mp4
+
+EXAMPLES:
+  python bench_encoding.py input.mp4
+  .\bench_encoding.ps1 video.mkv
+  ./bench_encoding.sh sample.mp4
+"""
+
 import sys
 import subprocess
 import os
