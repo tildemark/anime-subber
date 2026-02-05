@@ -6,6 +6,7 @@ This project is specifically optimized for mid-range hardware (tested on **Ryzen
 
 ## 🌟 Features
 - **Modern Compression:** Uses `SVT-AV1` for superior quality-to-size ratio.
+- **GPU Option (encode_smart):** Optional HEVC NVENC path for faster encodes on NVIDIA GPUs.
 - **AI Translation:** Leverages `Whisper-CTranslate2` to turn Japanese audio into English `.srt` files.
 - **VAD Integration:** Voice Activity Detection skips silent/action scenes to prevent AI hallucinations.
 - **Resource Friendly:** Runs with low-priority flags to keep your OS responsive.
@@ -104,6 +105,8 @@ This structure solves real problems that existed when all 25+ files were in the 
 ### 1. FFmpeg Installation
 
 FFmpeg is required for video encoding and muxing.
+
+> **Optional:** If you place a local `ffmpeg.exe` alongside the scripts, the encoders will use it automatically (Windows only). Put it in `scripts/ffmpeg.exe`.
 
 #### **Windows Installation:**
 
@@ -338,7 +341,7 @@ python scripts/pipeline_windows.py input.mp4 output.mkv
 ```bash
 python scripts/encode_smart.py input.mp4 output.mkv
 ```
-→ Smart benchmarking first, then you pick settings
+→ Smart benchmarking first, then you pick settings (CPU SVT-AV1 or GPU NVENC)
 → Takes: 40-80 hours
 
 ### ✅ If You Already Have Encoded Video
@@ -354,6 +357,8 @@ python scripts/pipeline_windows.py "*.mp4"
 ```
 → Processes all MP4 files in directory sequentially
 → Perfect for converting multiple episodes
+
+**encode_smart batch mode** benchmarks the first file, then applies your chosen option to the rest.
 
 ---
 

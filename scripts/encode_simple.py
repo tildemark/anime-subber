@@ -30,11 +30,20 @@ import subprocess
 import os
 from glob import glob
 
+# ========== PATH HELPERS ==========
+
+def get_ffmpeg_path():
+    """Return bundled ffmpeg.exe if present, otherwise use PATH."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    local_ffmpeg = os.path.join(script_dir, "ffmpeg.exe") if os.name == 'nt' else "ffmpeg"
+    if os.name == 'nt' and os.path.exists(local_ffmpeg):
+        return local_ffmpeg
+    return "ffmpeg"
+
 # ========== HELPER FUNCTION ==========
 def convert_single_file(input_file, output_file, target_res):
     """Convert a single video file to AV1"""
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    ffmpeg_path = os.path.join(script_dir, "ffmpeg.exe") if os.name == 'nt' else "ffmpeg"
+    ffmpeg_path = get_ffmpeg_path()
 
     command = [ffmpeg_path, "-i", input_file]
 

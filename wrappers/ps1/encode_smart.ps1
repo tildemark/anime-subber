@@ -12,9 +12,9 @@
 #   .\encode_smart.ps1 "*.mp4"  (batch mode)
 #
 # FEATURES:
-#   - Hardware benchmarking (single file mode)
-#   - Interactive settings selection
-#   - Batch mode uses defaults for speed
+#   - Hardware benchmarking (single file and batch sample)
+#   - Interactive settings selection (options 1-6)
+#   - Choice of CPU (SVT-AV1) or GPU (NVENC HEVC)
 #
 #############################################
 
@@ -46,6 +46,9 @@ if ($Arguments.Count -eq 0) {
     Write-Host "  .\encode_smart.ps1 video.mp4" -ForegroundColor White
     Write-Host "  .\encode_smart.ps1 video.mp4 output.mkv" -ForegroundColor White
     Write-Host "  .\encode_smart.ps1 '*.mkv'  (batch mode)" -ForegroundColor White
+    Write-Host "Notes:" -ForegroundColor DarkGray
+    Write-Host "  - Single-file mode: choose CPU/GPU, then options 1-6" -ForegroundColor DarkGray
+    Write-Host "  - Batch mode: benchmarks first file, then applies chosen option to all" -ForegroundColor DarkGray
     exit 0
 }
 

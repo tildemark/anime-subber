@@ -2,6 +2,21 @@
 
 All notable changes to the Anime Subber project are documented here.
 
+## [1.2.1] - February 5, 2026
+
+### Added
+- **Local FFmpeg auto-detection**: `encode_simple.py` and `encode_smart.py` now use a bundled `ffmpeg.exe` if present (Windows), otherwise fall back to PATH.
+- **GPU encoding option in `encode_smart.py`**: Optional HEVC NVENC path for faster encodes on NVIDIA GPUs.
+- **Batch benchmarking in `encode_smart.py`**: Benchmarks the first file and applies the selected option to the batch.
+- **More encoding options**: Added options 5 and 6 in the interactive menu for smaller file variants.
+
+### Changed
+- **Batch flow in `encode_smart.py`**: Now interactive with benchmarking and selectable presets instead of fixed defaults.
+- **PowerShell wrapper guidance**: `encode_smart.ps1` usage text and feature list now reflect GPU choice and expanded options.
+
+### Fixed
+- **Benchmark stability**: Avoids divide-by-zero when timing is extremely short and reports ffmpeg errors cleanly.
+
 ## [1.2.0] - January 24, 2026
 
 ### Added
