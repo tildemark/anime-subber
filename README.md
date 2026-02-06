@@ -16,7 +16,39 @@ This project is specifically optimized for mid-range hardware (tested on **Ryzen
 
 ---
 
-## 🚀 Quick Start (Easiest Way)
+## 🖥️ NEW: GUI Application (Windows Desktop)
+
+**Want a graphical interface?** We now have a **Windows Desktop Application** built with Gooey!
+
+### ✨ GUI Features
+- 🎨 **User-Friendly Interface**: Standard readable theme with file/folder choosers
+- 📁 **Batch Processing**: Select a folder to process all videos automatically
+- ⚙️ **Easy Configuration**: Dropdowns for all settings (device, resolution, preset)
+- 🔄 **Hybrid Mode**: Works as both GUI and CLI
+- 📦 **Standalone .exe**: Build once, share with anyone (no Python needed)
+- ⏻️ **Auto-Shutdown**: Optional PC shutdown after batch completion
+
+### 🚀 Quick Start
+
+```powershell
+# One-time setup
+.\setup.ps1
+
+# Launch the GUI
+python main_app.py
+```
+
+### 📖 Documentation
+
+- **[QUICKSTART.md](QUICKSTART.md)** - Get started in 2 minutes
+- **[docs/GUI_README.md](docs/GUI_README.md)** - Complete GUI documentation
+- **[docs/BUNDLING_GUIDE.md](docs/BUNDLING_GUIDE.md)** - Build standalone .exe
+
+**Perfect for:** Desktop users, batch processing, non-technical users
+
+---
+
+## 🚀 Quick Start (CLI - Traditional Way)
 
 **Windows PowerShell:**
 ```powershell
@@ -74,29 +106,6 @@ anime-subber/
 ├── README.md                   # This file (main documentation)
 └── CHANGELOG.md                # Version history
 ```
-
-**Why organize this way?**
-
-This structure solves real problems that existed when all 25+ files were in the root directory:
-
-1. **Easier Navigation** - Before: scroll through 25 files. After: 4 clear folders (scripts, wrappers, docs, root docs)
-
-2. **Clearer Purpose** - New users instantly understand:
-   - `scripts/` = The actual programs
-   - `wrappers/` = Convenient shortcuts grouped by OS
-   - `docs/` = Extra documentation
-
-3. **Better Version Control** - Git diffs are cleaner when files are grouped by purpose
-
-4. **Simpler Onboarding** - New contributors don't need to guess what `convert2.py` does when it's clearly named `encode_smart.py` in a `scripts/` folder
-
-5. **Cross-Platform Clarity** - Windows users know to look in `wrappers/ps1/`, Linux users in `wrappers/sh/`. No confusion about which file to run.
-
-6. **GitHub Best Practice** - README.md in root automatically displays on the repository homepage
-
-7. **Scalability** - Adding new scripts or wrappers doesn't clutter the root. Everything has a logical home.
-
-**Real-world benefit:** Instead of seeing a wall of 25 files, you now see 4 folders + 2 docs. Finding what you need takes seconds instead of minutes.
 
 ---
 

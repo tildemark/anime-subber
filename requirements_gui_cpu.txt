@@ -1,0 +1,36 @@
+# ========================================
+# AnimeSubber GUI - Python Dependencies
+# ========================================
+# CPU-ONLY VERSION - No CUDA/GPU support
+# Install all dependencies with:
+#   pip install -r requirements_gui_cpu.txt
+#
+# Use this if:
+#   • You don't have an NVIDIA GPU
+#   • You want smaller installation size
+#   • You only need CPU processing
+#
+# For GPU support:
+#   pip install -r requirements_gui.txt
+
+# GUI Framework
+gooey
+six  # Required by Gooey but not auto-installed
+
+# AI Subtitle Generation
+whisper-ctranslate2
+
+# PyTorch CPU-only (much smaller download)
+# Note: This installs CPU-only versions (no CUDA)
+torch
+torchvision
+torchaudio
+
+# Build Tool (for creating .exe)
+pyinstaller
+
+# Additional dependencies (usually auto-installed by above packages)
+# numpy
+# pillow
+# ctranslate2
+# faster-whisper

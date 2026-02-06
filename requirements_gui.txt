@@ -1,0 +1,33 @@
+# ========================================
+# AnimeSubber GUI - Python Dependencies
+# ========================================
+# FLEXIBLE VERSION - Installs latest compatible versions
+# Install all dependencies with:
+#   pip install -r requirements_gui.txt
+#
+# For pinned versions (recommended for production):
+#   pip install -r requirements_gui_pinned.txt
+
+# GUI Framework
+gooey
+six  # Required by Gooey but not auto-installed
+
+# AI Subtitle Generation
+whisper-ctranslate2
+
+# PyTorch with CUDA support (Windows)
+# Note: This installs the CUDA 12.1 version
+# For CPU-only, remove the --extra-index-url line and use default torch
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch
+torchvision
+torchaudio
+
+# Build Tool (for creating .exe)
+pyinstaller
+
+# Additional dependencies (usually auto-installed by above packages)
+# numpy
+# pillow
+# ctranslate2
+# faster-whisper

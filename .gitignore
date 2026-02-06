@@ -1,0 +1,73 @@
+# ========================================
+# AnimeSubber - Git Ignore File
+# ========================================
+
+# PyInstaller build outputs
+build/
+dist/
+*.spec
+
+# Bundled resources (downloaded separately)
+bundled/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+
+# PyInstaller
+*.manifest
+*.exe
+*.dll
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Whisper model cache (optional - uncomment if you don't want to track models)
+# .cache/
+# whisper-models/
+
+# FFmpeg executables (if placed locally)
+ffmpeg.exe
+ffprobe.exe
+ffplay.exe
+
+# Temporary files
+*.tmp
+*.temp
+~*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Output files from processing
+*_encoded.mkv
+*_final.mkv
+*.srt
+
+# Virtual environment
+venv/
+.venv/
+virtualenv/

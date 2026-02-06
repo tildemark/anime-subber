@@ -2,6 +2,81 @@
 
 All notable changes to the Anime Subber project are documented here.
 
+## [2.0.0] - February 6, 2026
+
+### Added - GUI Application 🎉
+- **Windows Desktop Application**: Complete GUI built with Gooey framework
+  - `main_app.py` - Hybrid GUI/CLI application with automatic mode detection
+  - Standard readable theme for better usability
+  - Mutually exclusive input group (single file OR batch folder)
+  - Hardware configuration dropdowns (CUDA/CPU, resolution, SVT-AV1 preset)
+  - Optional PC shutdown after batch completion
+  - PyInstaller bundling support with FFmpeg detection
+
+- **Build & Distribution Tools**:
+  - `build_exe.ps1` - Basic PyInstaller build script (~500 MB .exe)
+  - `build_exe_bundled.ps1` - Bundled build with FFmpeg included
+  - `download_ffmpeg.ps1` - Automated FFmpeg download for bundling
+  - `download_whisper_models.ps1` - Whisper model download for offline use
+  - `setup.ps1` - One-command dependency installation
+
+- **Requirements Files**:
+  - `requirements_gui.txt` - Flexible versions with CUDA support
+  - `requirements_gui_pinned.txt` - Stable pinned versions (recommended)
+  - `requirements_gui_cpu.txt` - CPU-only version for systems without GPU
+
+- **Comprehensive Documentation** (12 new guides):
+  - `QUICKSTART.md` - 2-minute quick start guide
+  - `docs/GUI_README.md` - Complete GUI documentation
+  - `docs/QUICKSTART_GUI.md` - 5-minute GUI quick start
+  - `docs/REQUIREMENTS_GUIDE.md` - Requirements file comparison
+  - `docs/BUNDLING_GUIDE.md` - Complete bundling & distribution guide
+  - `docs/TROUBLESHOOTING.md` - Comprehensive troubleshooting
+  - `docs/INSTALLATION_SUCCESS.md` - Installation verification
+  - `docs/SETUP_COMPLETE.md` - Setup summary
+  - `docs/PROJECT_STRUCTURE.md` - Project organization
+  - `docs/PACKAGE_SUMMARY.md` - Package overview
+  - `docs/GUI_ARCHITECTURE.md` - Technical architecture diagrams
+  - `docs/README.md` - Documentation index
+
+- **Testing & Examples**:
+  - `test_installation.ps1` - Automated dependency verification
+  - `examples_cli.ps1` - CLI usage examples and automation templates
+
+### Changed
+- **Documentation Organization**: 
+  - Moved all documentation except README.md and CHANGELOG.md to `docs/` folder
+  - Created comprehensive documentation index in `docs/README.md`
+  - Updated all cross-references in README.md and QUICKSTART.md
+
+- **README.md**: 
+  - Added GUI application section with features and quick start
+  - Updated installation instructions to use `setup.ps1`
+  - Simplified quick start to 2 commands
+
+- **UI Theme**: Changed from dark theme to standard Gooey theme for better readability
+
+### Fixed
+- **Dependency Issues**:
+  - Added `six` package to all requirements files (required by Gooey)
+  - Pinned `colored==1.4.4` for Gooey compatibility (v2.x breaks Gooey)
+  - Fixed widget parameter handling for CLI mode compatibility
+
+- **Build Script**: Simplified `build_exe.ps1` to avoid PowerShell syntax issues
+
+### Technical Details
+- **Bundled FFmpeg Support**: Application automatically detects bundled FFmpeg in PyInstaller executables via `sys._MEIPASS`
+- **VAD Filter Escaping**: Proper JSON escaping for Whisper VAD parameters on Windows
+- **Low Priority Processing**: Uses `creationflags=0x00004000` for Windows background processing
+- **Hybrid Architecture**: Single codebase supports both GUI (Gooey) and CLI (argparse) modes
+
+### Repository Structure
+- Added `.gitignore` to exclude build artifacts, bundled resources, and temporary files
+- Clean root directory with only essential files
+- All documentation organized in `docs/` folder
+
+---
+
 ## [1.2.1] - February 5, 2026
 
 ### Added
